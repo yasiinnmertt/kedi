@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedi Bilgi Dünyası</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="themeToggle" class="theme-btn">
+        <span id="themeIcon">☀️</span> <span id="themeText">Açık Mod</span>
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>Kedi Bilgi Dünyası</h1>
+        </header>
+
+        <main id="homePage">
+            <div class="glass-box">
+                <h3 style="margin-bottom: 10px;">Yeni Bilgi Keşfet</h3>
+                <div class="search-group">
+                    <input type="text" id="searchInput" placeholder="Buraya 'kedi' yazın...">
+                    <button id="fetchBtn">BİLGİ GETİR</button>
+                </div>
+                <div id="statusMessage" style="margin-top: 10px; font-weight: 600;"></div>
+            </div>
+
+            <div class="cards-section">
+                <h2 style="margin-bottom: 20px; color: var(--accent-color);">Bilgi Kartları</h2>
+                <div id="cardContainer" class="grid-container"></div>
+            </div>
+        </main>
+
+        <section id="detailPage" class="hidden">
+            <div class="glass-box">
+                <h2>BİLGİ DETAYI</h2>
+                <div id="detailContent" style="padding: 20px; font-size: 1.2rem; line-height: 1.6;"></div>
+                <button id="backBtn">GERİ DÖN</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 - Kedi Bilgi Sistemi</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

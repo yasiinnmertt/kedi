@@ -1,0 +1,196 @@
+/* --- DEĞİŞKENLER VE TEMA AYARLARI --- */
+:root {
+    /* Açık Mod - Modern Lacivert ve Ferah Beyaz */
+    --bg-color: #fcfcfc; 
+    --text-color: #1a2a6c; /* Ana lacivert tonu */
+    --box-bg: #ffffff;
+    --border-color: #dee2e6;
+    --accent-color: #1a2a6c; /* Vurgu rengi: Lacivert */
+    --soft-radius: 20px;
+}
+
+body[data-theme="dark"] {
+    /* Koyu Mod - Derin Gece Mavisi */
+    --bg-color: #0f172a;
+    --text-color: #f1f5f9;
+    --box-bg: #1e293b;
+    --border-color: #334155;
+    --accent-color: #38bdf8; /* Koyu modda daha görünür olması için açık mavi */
+}
+
+/* --- GENEL SIFIRLAMA --- */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    transition: all 0.3s ease-in-out; 
+}
+
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+/* --- TEMA DEĞİŞTİRME BUTONU (FIXED) --- */
+.theme-btn { 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    border-radius: 50px; 
+    z-index: 1000; 
+    border: 2px solid var(--accent-color) !important; 
+    padding: 10px 20px; 
+    background-color: var(--box-bg) !important;
+    color: var(--accent-color) !important; /* Yazının kaybolmaması için zorunlu lacivert */
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- HEADER --- */
+header { 
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+
+h1 { 
+    font-weight: 700; 
+    color: var(--accent-color); 
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header p { 
+    opacity: 0.7; 
+}
+
+/* --- KUTU TASARIMLARI --- */
+.glass-box, .border-box { 
+    background-color: var(--box-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--soft-radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.hidden { display: none !important; }
+
+/* --- ARAMA VE BUTONLAR --- */
+.search-group { 
+    display: flex; 
+    gap: 12px; 
+    margin-top: 20px; 
+}
+
+input { 
+    flex: 1; 
+    padding: 16px 25px; 
+    border: 2px solid var(--border-color); 
+    background: var(--box-bg); 
+    color: var(--text-color); 
+    outline: none;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus { 
+    border-color: var(--accent-color); 
+}
+
+#fetchBtn, #backBtn { 
+    padding: 12px 30px; 
+    cursor: pointer; 
+    background-color: var(--accent-color) !important; 
+    color: white !important; 
+    border: none; 
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+#fetchBtn:hover, #backBtn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(26, 42, 108, 0.2); 
+}
+
+/* --- BİLGİ KARTLARI --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.cat-card {
+    background: var(--box-bg);
+    border: 1px solid var(--border-color);
+    padding: 40px 25px;
+    cursor: pointer;
+    border-radius: var(--soft-radius);
+    position: relative;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Kedi Emojisi Madalyonu - Lacivert Arka Plan */
+.cat-card::after {
+    content: "🐱";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color); 
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.cat-card:hover { 
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.cat-card h3 {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+}
+
+/* --- DETAY SAYFASI --- */
+.detail-card {
+    padding: 20px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* --- FOOTER --- */
+footer { 
+    text-align: center; 
+    padding: 60px 40px; 
+    opacity: 0.5; 
+    font-size: 0.85rem; 
+}
